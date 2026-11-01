@@ -1,4 +1,5 @@
 
+
 import os
 from dotenv import load_dotenv
 
@@ -28,4 +29,3 @@ print(f"API_KEY loaded: {bool(api_key)}")
 APP_VERSION = "1.0.0"
 
 print(f"Application version: {APP_VERSION}")
-
