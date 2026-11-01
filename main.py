@@ -23,3 +23,9 @@ if not api_key:
 # 5. Выводим результат
 print(f"Application name: {app_name}")
 print(f"API_KEY loaded: {bool(api_key)}")
+
+# 6. Application version
+APP_VERSION = "1.0.0"
+
+print(f"Application version: {APP_VERSION}")
+
