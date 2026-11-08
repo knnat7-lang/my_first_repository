@@ -1,26 +1,26 @@
 # My First Python Repository
 
-## 1. Project Description
+# Мой первый репозиторий Python
 
-This is a beginner Python project that demonstrates
-how to manage application configuration using
-environment variables and the python-dotenv library.
+## 1. Описание проекта (Project Description)
 
-The program loads configuration settings from a .env file,
-checks required variables, uses default values for optional
-settings, and displays whether a secret API key is loaded
-without revealing its actual value.
+Это учебный проект для начинающих Python-разработчиков. Он
+демонстрирует, как управлять настройками приложения с помощью переменных
+окружения и библиотеки `python-dotenv`.
 
-## 2. Requirements
+Программа: - Загружает настройки из файла `.env`. - Проверяет наличие
+обязательных переменных. - Использует значения по умолчанию для
+необязательных настроек. - Проверяет, загружен ли секретный API-ключ, не
+раскрывая его содержимое.
 
-Before running this project, make sure you have:
+## 2. Требования (Requirements)
 
-- Python 3.10 or higher
-- Git
-- pip
+Перед запуском проекта убедитесь, что у вас установлены: - Python 3.10
+или выше. - Git. - pip.
 
-## 3. Project Structure
+## 3. Структура проекта (Project Structure)
 
+``` text
 my_first_repository/
 │
 ├── .venv/
@@ -31,237 +31,280 @@ my_first_repository/
 ├── README.md
 ├── main.py
 └── requirements.txt
+```
 
-## 4. Installation
+## 4. Установка (Installation)
 
-### Step 1. Clone the repository
+### Шаг 1. Клонирование репозитория
 
+``` bash
 git clone YOUR_GITHUB_REPOSITORY_URL
+```
 
-Navigate to the project directory:
+Перейдите в папку проекта:
 
+``` bash
 cd my_first_repository
+```
 
-### Step 2. Create a virtual environment
+### Шаг 2. Создание виртуального окружения
 
+``` bash
 python -m venv .venv
+```
 
-### Step 3. Activate the virtual environment
+### Шаг 3. Активация виртуального окружения
 
-For Windows PowerShell:
-For powershell
+Для Windows PowerShell:
+
+``` powershell
 .venv\Scripts\Activate.ps1
+```
 
-For macOS / Linux:
+Для macOS / Linux:
+
+``` bash
 source .venv/bin/activate
+```
 
-### Step 4. Install dependencies
+### Шаг 4. Установка зависимостей
 
+``` bash
 pip install -r requirements.txt
+```
 
-## 5. Configuration
+## 5. Настройка проекта (Configuration)
 
-The project uses a .env file to store configuration
-variables.
+Проект использует файл `.env` для хранения настроек приложения.
 
-First, create your local .env file by copying
-the example configuration.
+Сначала создайте локальный файл `.env`, скопировав файл-пример.
 
-For Windows PowerShell:
+Для Windows PowerShell:
 
+``` powershell
 Copy-Item .env.example .env
+```
 
-For macOS / Linux:
+Для macOS / Linux:
 
+``` bash
 cp .env.example .env
+```
 
-Open the .env file and replace the example values
-with your own configuration.
+Откройте файл `.env` и замените примеры значений своими настройками.
 
-### Environment Variables
+### Переменные окружения (Environment Variables)
 
-| Variable  | Required | Description                  |
-| --------- | -------- | ---------------------------- |
-| APP_NAME  | Yes      | Name of the application      |
-| API_KEY   | Yes      | Secret API key               |
-| LOG_LEVEL | No       | Logging level. Default: INFO |
+  Переменная    Обязательная   Описание
+  ------------- -------------- -------------------------------------------
+  `APP_NAME`    Да             Название приложения
+  `API_KEY`     Да             Секретный API-ключ
+  `LOG_LEVEL`   Нет            Уровень логирования. По умолчанию: `INFO`
 
-### Example .env configuration
+### Пример содержимого файла `.env`
 
-env
+``` env
 APP_NAME=My First Python Project
 API_KEY=your_secret_api_key
 LOG_LEVEL=DEBUG
+```
 
-Never commit your .env file to GitHub.
+Никогда не загружайте файл `.env` на GitHub.
 
-The .env file is excluded through .gitignore.
+Файл `.env` исключён из Git с помощью `.gitignore`.
 
-The .env.example file contains placeholder values
-and can safely be committed to the repository.
+Файл `.env.example` содержит примеры настроек без настоящих секретных
+данных, поэтому его можно загружать в репозиторий.
 
-## 6. Run the Project
+## 6. Запуск проекта (Run the Project)
 
-After configuring the .env file, run:
+После настройки файла `.env` выполните команду:
 
+``` bash
 python main.py
+```
 
-### Expected Output
+### Ожидаемый результат (Expected Output)
 
+``` text
 Application name: My First Python Project
 API_KEY loaded: True
 Log level: DEBUG
+```
 
-The program displays the application name,
-checks whether the API key is loaded,
-and displays the logging level.
+Программа отображает название приложения, проверяет, загружен ли
+API-ключ, и показывает уровень логирования.
 
-The actual API key is never printed.
+Сам API-ключ никогда не выводится на экран.
 
-### Missing Required Variables
+### Если обязательные переменные отсутствуют (Missing Required Variables)
 
-If APP_NAME or API_KEY is missing,
-the program terminates with a clear error message.
+Если `APP_NAME` или `API_KEY` отсутствует, программа завершает работу и
+выводит понятное сообщение об ошибке.
 
-For example:
+Например:
 
+``` text
 Error: API_KEY is missing!
+```
 
-### Default Value
+### Значение по умолчанию (Default Value)
 
-LOG_LEVEL is an optional environment variable.
+`LOG_LEVEL` --- необязательная переменная окружения.
 
-If LOG_LEVEL is not specified in the .env file,
-the program automatically uses INFO.
+Если она не указана в файле `.env`, программа автоматически использует
+значение `INFO`.
 
-Example output:
+Пример результата:
 
+``` text
 Application name: My First Python Project
 API_KEY loaded: True
 Log level: INFO
+```
 
-## 7. Git and Version Control
+## 7. Git и контроль версий (Git and Version Control)
 
-This project demonstrates basic Git operations:
+В этом проекте были изучены и использованы основные команды Git:
 
-- git init
-- git add
-- git commit
-- git status
-- git branch
-- git switch
-- git merge
-- git log
+``` bash
+git init
+git add
+git commit
+git status
+git branch
+git switch
+git merge
+git log
+```
 
-### Branch Workflow
+### Работа с ветками (Branch Workflow)
 
-A separate branch named add-version-feature
-was created to develop a new application version feature.
+Для разработки новой функции была создана отдельная ветка с названием
+`add-version-feature`.
 
-The following Git commands were used:
+Использовались следующие команды Git:
 
+``` bash
 git switch main
 git switch -c add-version-feature
+```
 
-After adding the application version feature:
+После добавления функции отображения версии приложения изменения были
+сохранены:
 
+``` bash
 git add main.py
 git commit -m "Add application version"
+```
 
-The feature branch was merged into main:
+Затем новая функция была объединена с основной веткой `main`:
 
+``` bash
 git switch main
 git merge add-version-feature
+```
 
-This demonstrates how to develop a feature
-in a separate branch and merge it into the main branch.
+Это демонстрирует, как разрабатывать новые функции в отдельных ветках и
+объединять их с основной версией проекта.
 
-## 8. Security Incident and Fix
+## 8. Инцидент безопасности и его исправление (Security Incident and Fix)
 
-As an additional Git practice exercise,
-a fake .env file was intentionally committed
-to demonstrate how to fix accidentally tracked secrets.
+В качестве дополнительного упражнения по Git был намеренно добавлен
+фиктивный файл `.env` в репозиторий, чтобы продемонстрировать, как
+исправить ситуацию со случайным отслеживанием секретных данных.
 
-The file was subsequently removed from Git tracking
-using:
+Впоследствии файл был удалён из отслеживания Git с помощью команды:
 
+``` bash
 git rm --cached .env
+```
 
-The .env file was also added to .gitignore
-to prevent it from being committed again.
+Также файл `.env` был добавлен в `.gitignore`, чтобы предотвратить его
+повторное добавление в репозиторий.
 
-### Important Security Note
+### Важное замечание о безопасности (Important Security Note)
 
-Removing .env from Git tracking does not remove
-the file from previous commits or Git history.
+Удаление `.env` из отслеживания Git не удаляет этот файл из предыдущих
+коммитов и истории Git.
 
-If a real API key or other secret is exposed,
-it must be revoked or rotated immediately.
+Если настоящий API-ключ или другие секретные данные были раскрыты,
+необходимо немедленно отозвать или заменить их.
 
-Simply deleting the file or adding it to .gitignore
-does not make an exposed secret safe again.
+Простое удаление файла или добавление его в `.gitignore` не делает ранее
+раскрытый секрет безопасным.
 
-Only fake test credentials were used
-for this exercise.
+В этом упражнении использовались только фиктивные тестовые данные.
 
-## 9. .gitignore
+## 9. Файл .gitignore
 
-The following files and directories are excluded
-from Git tracking:
+Следующие файлы и папки исключены из отслеживания Git.
 
-# Python virtual environment
+### Виртуальное окружение Python
 
+``` gitignore
 .venv/
 venv/
+```
 
-# Environment variables and secrets
+### Переменные окружения и секретные данные
 
+``` gitignore
 .env
+```
 
-# Python cache
+### Кэш Python
 
-**pycache**/
-\*.py[cod]
+``` gitignore
+__pycache__/
+*.py[cod]
+```
 
-# Operating system files
+### Файлы операционной системы
 
+``` gitignore
 .DS_Store
 Thumbs.db
 Desktop.ini
+```
 
-# IDE and editors
+### IDE и редакторы кода
 
+``` gitignore
 .idea/
 .vscode/
+```
 
-# Test and coverage files
+### Тестирование и отчёты о покрытии кода
 
+``` gitignore
 .pytest_cache/
 .coverage
 htmlcov/
+```
 
-# Distribution files
+### Файлы сборки и распространения
 
+``` gitignore
 dist/
 build/
-\*.egg-info/
+*.egg-info/
+```
 
-## 10. License
+## 10. Лицензия (License)
 
-This project is licensed under the MIT License.
+Этот проект распространяется под лицензией MIT.
 
-See the LICENSE file for more information.
+Дополнительная информация находится в файле `LICENSE`.
 
-## 11. Author
+## 11. Автор (Author)
 
-Created as a beginner Python learning project.
+Создано в рамках изучения Python для начинающих.
 
-The purpose of this project is to practice:
+### Цель проекта
 
-- Python programming
-- Environment variables
-- Configuration management
-- Git and GitHub
-- Virtual environments
-- Project documentation
-- Basic security practices
+Получить практические навыки в следующих областях: - Программирование на
+Python. - Работа с переменными окружения. - Управление конфигурацией
+приложения. - Работа с Git и GitHub. - Использование виртуальных
+окружений. - Документирование проектов. - Основы информационной
+безопасности.
